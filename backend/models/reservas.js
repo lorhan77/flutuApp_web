@@ -7,7 +7,7 @@ var Schema = mongoose.Schema;
 var Reserva = new Schema ({
 
     numero      : { type:Number },
-    sala        : { type:String },
+    flutuante      : { type:String },
     cliente     : { type:String },
     funcionario : { type:String},
     data        : { type:Date },            
@@ -16,7 +16,7 @@ var Reserva = new Schema ({
     valor       : { type:Number },
     valortotal  : { type:Number },    
     observacao  : { type:String },
-    status      : { type:String,}    
+    status      : { type:String}    
 })
 
 const ReservaModel = mongoose.model('reservas_colls', Reserva);

@@ -26,9 +26,29 @@ function Reservas() {
   const [selectedValue, setSelectedValue] = useState('');
 
   const [clienteValue, setClienteValue] = useState('');
+
+  const [clientecpf, setClientecpf] = useState('');
+
+  useEffect(() => {
+    async function fetchClienteData() {
+      try {
+        if (clientecpf) {
+          console.log(clientecpf);
+          const clienteData = await clientesService.getClienteCPF(clientecpf);
+          console.log(clienteData.data[0]);
+          if(clienteData.data.length>0){
+            setClientecpf(clienteData.data[0]);
+          }
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    }
+    fetchClienteData();
+  }, [clientecpf]);
   
   useEffect(() => {
-
+      
     
       async function fetchFormData () {
       try {
@@ -56,8 +76,8 @@ function Reservas() {
         
         alert(id); 
         alert(reservaData.flutuantes); 
+        
         reservaData.funcionario='Web - Internet';
-        reservaData.cliente='Web - Internet';
         reservaData.status='N';
         reservaData.valortotal='999999';
         if (event.nativeEvent.submitter.name === 'salvar') {
@@ -98,6 +118,12 @@ function Reservas() {
       setClienteValue({ ...clienteValue, [name]: value });
     };
 
+    var cpfChange = (event) => {
+      console.log(cpfChange);
+      setClientecpf(event.target.value);
+      
+    };
+
     
   return (    
 
@@ -109,8 +135,8 @@ function Reservas() {
       <Form className='form-reservas' onSubmit={handleSubmit}>
 
       <Form.Group>
-        <Form.Label  className='cpfForm'> CPF: <Form.Control type="text" name="cpf" value={clienteValue.cpf} onChange={clienteChange}/></Form.Label>
-        <Form.Label> Nome: <Form.Control type="text" name="nome" value={clienteValue.nome} onChange={clienteChange} /> </Form.Label> 
+        <Form.Label  className='cpfForm'> CPF: <Form.Control type="text" name="cpf" value={clientecpf.cpf} onChange={cpfChange}/></Form.Label>
+        <Form.Label> Nome: <Form.Control type="text" name="nome" value={clientecpf.nome} onChange={clienteChange} /> </Form.Label> 
         <Link to="/clientes/:id">
           <Button>
             <Image

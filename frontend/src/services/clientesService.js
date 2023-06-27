@@ -14,7 +14,7 @@ var clientesService = {
   },
 
   getClienteCPF: async (clientecpf) => {
-    var clienteAPI = axios.get('http://localhost:5000/clientes/'+clientecpf);
+    var clienteAPI = axios.get('http://localhost:5000/clientes/cpf/'+clientecpf);
     return await clienteAPI;
   },
   

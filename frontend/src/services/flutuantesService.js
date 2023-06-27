@@ -18,13 +18,13 @@ var flutuantesService = {
     return await flutuanteAPI;
   },
 
-  createFlutuantes: async (sala) => {
-    var flutuanteAPI = axios.post('http://localhost:5000/flutuantes', sala);
+  createFlutuantes: async (flutuante) => {
+    var flutuanteAPI = axios.post('http://localhost:5000/flutuantes', flutuante);
     return await flutuanteAPI;
   },
 
-  updateFlutuantes: async (id, sala) => {
-    var flutuanteAPI = axios.put('http://localhost:5000/flutuantes/'+id, flutuanteAPI);
+  updateFlutuantes: async (id, flutuante) => {
+    var flutuanteAPI = axios.put('http://localhost:5000/flutuantes/'+id, flutuante);
     return await flutuanteAPI;
   },
 

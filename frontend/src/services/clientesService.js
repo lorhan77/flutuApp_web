@@ -12,6 +12,11 @@ var clientesService = {
     var clienteAPI = axios.get('http://localhost:5000/clientes/'+id);
     return await clienteAPI;
   },
+
+  getClienteCPF: async (clientecpf) => {
+    var clienteAPI = axios.get('http://localhost:5000/clientes/'+clientecpf);
+    return await clienteAPI;
+  },
   
   deleteClientes: async (id) => {
     var clienteAPI = axios.delete('http://localhost:5000/clientes/'+id);

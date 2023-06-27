@@ -32,7 +32,7 @@ function Reservas() {
     
       async function fetchFormData () {
       try {
-
+        
         const responseFlutuante = await flutuantesService.getFlutuantes();
         setDropData(responseFlutuante.data);
 
@@ -60,7 +60,7 @@ function Reservas() {
         reservaData.cliente='Web - Internet';
         reservaData.status='N';
         reservaData.valortotal='999999';
-        if (event.nativeEvent.submitter.name === "salvar") {
+        if (event.nativeEvent.submitter.name === 'salvar') {
           if (id === 'inserir') {
            
               await  reservasService.createReservas(reservaData);

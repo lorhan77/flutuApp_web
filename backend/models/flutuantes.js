@@ -6,12 +6,12 @@ mongoose.connect('mongodb://127.0.0.1/reservas')
 var Schema = mongoose.Schema;
 
 const Flutuantes = new Schema({
-  numero: {type:Number, required: true},
-  capacidade:{type:String, required: true},
-  valor: {type:Number,required: true},
-  tipo:{type:String, required: true},
-  descricao: {type:String, required: true},
-  image: {type:String, required: true}
+  numero: {type:Number},
+  capacidade:{type:String},
+  valor: {type:Number},
+  tipo:{type:String},
+  descricao: {type:String},
+  image: {type:String}
 });
 
 const FlutuantesModel = mongoose.model('flutuantes', Flutuantes);

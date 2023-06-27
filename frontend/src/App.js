@@ -6,8 +6,9 @@ import Home from './paginas/home';
 import Funcionarios from './paginas/funcionarios';
 import { Container } from 'react-bootstrap';
 //import Salas from './paginas/salas';
-import  ListaSalas from './paginas/listasalas';
+//import  ListaSalas from './paginas/listasalas';
 import  ListaClientes from './paginas/listaclientes';
+import  ListaFlutuantes from './paginas/listaflutuantes';
 import  ListaFuncionarios from './paginas/listafuncionarios';
 import Index from './paginas/index';
 import Reservas from './paginas/reservas';
@@ -24,8 +25,8 @@ function App() {
           <Route path="/" element={<Home/>} />
           <Route path="/clientes/:id" element={<Clientes/>} />
           <Route path="/funcionarios/:id" element={<Funcionarios/>} />
-       
-          <Route path="/flutuantes" element={< Flutuantes/>} />
+          <Route path="/flutuantes/:id" element={<Flutuantes/>} />
+          <Route path="/flutuantes" element={< ListaFlutuantes/>} />
           <Route path="/reservas" element={< Reservas/>} />
           <Route path="/reservas/:id" element={< Reservas/>} />
           <Route path="/clientes" element={< ListaClientes/>} />

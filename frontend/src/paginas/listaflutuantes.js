@@ -1,4 +1,4 @@
-/*import React,{ useEffect, useState} from 'react';
+import React,{ useEffect, useState} from 'react';
 //import axios from 'axios';
 import { Container, Row, Col, Form, FormControl, Button, Image} from 'react-bootstrap';
 import {  Link } from "react-router-dom";
@@ -29,7 +29,7 @@ function ListaFlutuantes() {
 
     async function handleDelete(id) {
       try {
-        const response = await salasService.deleteFlutuantes(id);
+        const response = await flutuantesService.deleteFlutuantes(id);
         setTableData(response.data);
         alert(id);
       } catch (error) {
@@ -52,7 +52,7 @@ function ListaFlutuantes() {
                 name='search'
                 />
                 <Button variant="outline-success" type="submit">Pesquisar</Button>
-                <Row className='headerSalas'>SALAS</Row>
+                <Row className='headerSalas'>FLUTUANTES</Row>
                     <table className='salasTab'>
                         <thead>
                             <tr>
@@ -117,4 +117,4 @@ function ListaFlutuantes() {
   );
 }
 
-export default  ListaFlutuantes ;*/
+export default  ListaFlutuantes ;

@@ -34,11 +34,11 @@ function Flutuantes() {
       try {
         
         //const id = event.target._id.value;
-        if (event.nativeEvent.submitter.name === "salvar") {
+        if (event.nativeEvent.submitter.name === 'salvar') {
           alert(id);
           if (id === ':id') {
             alert(id); 
-              await  flutuantesService.createFlututantes(flutuante);
+              await  flutuantesService.createFlutuantes(flutuante);
               alert('incluido com sucesso!'); 
           }
           else {
@@ -87,7 +87,7 @@ function Flutuantes() {
       </Form.Group>
       
       <Button size="lg" type="submit" name='salvar'>
-       Reservar agora
+       Cadastrar
       </Button>
       <Button  size="lg" variant="primary" type="submit" name="cancelar">
             Cancelar

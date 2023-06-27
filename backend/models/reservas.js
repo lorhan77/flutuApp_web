@@ -6,17 +6,17 @@ var Schema = mongoose.Schema;
 
 var Reserva = new Schema ({
 
-    numero      : { type:Number, required: true},
-    sala        : { type:String, required: true},
-    cliente     : { type:String,  required: true},
-    funcionario : { type:String,  required: true},
-    data        : { type:Date,  required: true},            
-    inicio      : { type:Number,  required: true},
-    fim         : { type:Number,  required: true},    
-    valor       : { type:Number,  required: true},
-    valortotal  : { type:Number, required: true},    
-    observacao  : { type:String,  required: true},
-    status      : { type:String,  required: true}    
+    numero      : { type:Number },
+    sala        : { type:String },
+    cliente     : { type:String },
+    funcionario : { type:String},
+    data        : { type:Date },            
+    inicio      : { type:Number},
+    fim         : { type:Number },    
+    valor       : { type:Number },
+    valortotal  : { type:Number },    
+    observacao  : { type:String },
+    status      : { type:String,}    
 })
 
 const ReservaModel = mongoose.model('reservas_colls', Reserva);
